@@ -17,10 +17,6 @@ $specialite = filter_input(INPUT_GET, 'specialite');
 $niveau = filter_input(INPUT_GET, 'niveau');
 
 
-
-
-echo $ine . " " . $numDossier, " End <br>";
-
 $servername = "localhost";
 $dbname = "DBcarnetadresse";
 $username = "gl";
@@ -60,9 +56,8 @@ try {
 
 //    $json = json_encode($results);
 
-    echo $json;
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    log("Connection failed: " . $e->getMessage());
 }  finally {
     $conn = null;
 }
